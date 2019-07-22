@@ -38,7 +38,7 @@ static int lept_parse_false(lept_context*c ,lept_value*v){
     if(c->json[0] != 'a' || c->json[1] != 'l' || c->json[2] != 's' 
                 || c->json[3] != 'e')
         return LEPT_PARSE_INVALID_VALUE;
-    c->json+=3;
+    c->json+=4;
     v->type = LEPT_FALSE;
     return LEPT_PARSE_OK;
 }
