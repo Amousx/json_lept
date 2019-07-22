@@ -13,7 +13,7 @@ typedef enum{
 
 typedef struct{
     lept_type type;
-}lept_node;    //tree struct ,just like the node
+}lept_value;    //tree struct ,just like the node
 
 typedef enum{
     LEPT_PARSE_OK = 0,                   //正常返回
@@ -22,8 +22,8 @@ typedef enum{
     LEPT_PARSE_ROOT_NOT_SINGULAR         //空白之后还有词
 }lept_error_type;    //enum return types
 
-int lept_parse(lept_node * v,const char* json);
+int lept_parse(lept_value * v,const char* json);
 
-lept_type lept_get_type(const lept_node* v);   //return the type of the node
+lept_type lept_get_type(const lept_value* v);   //return the type of the node
 
 #endif     /*LEPTJSON_H__*/
