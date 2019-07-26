@@ -43,6 +43,16 @@ static int lept_parse_false(lept_context*c ,lept_value*v){
     return LEPT_PARSE_OK;
 }
 
+static int lept_parse_number(lept_context* c,lept_value*v){
+    char* end;
+    v->n = strtod(c->json,&end);
+    if(c->json == end)
+        return LEPT_PARSE_INVALID_VALUE;
+    c->json = end;
+    v->type = LEPT_NUMEBR;
+    return LEPT_PARSE_OK;
+}
+
 static int lept_parse_value(lept_context* c, lept_value* v) {
     switch (*c->json) {
         case 'n':  return lept_parse_null(c, v);
