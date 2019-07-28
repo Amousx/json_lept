@@ -5,7 +5,7 @@ typedef enum{
     LEPT_NULL,
     LEPT_TRUE,
     LEPT_FALSE,
-    LEPT_NUMEBR,
+    LEPT_NUMBER,
     LEPT_STRING,
     LEPT_ARRAY,
     LEPT_OBJECT
@@ -20,7 +20,8 @@ typedef enum{
     LEPT_PARSE_OK = 0,                   //正常返回
     LEPT_PARSE_EXPECT_VALUE,             //json只有空白
     LEPT_PARSE_INVALID_VALUE,            //非其他情况
-    LEPT_PARSE_ROOT_NOT_SINGULAR         //空白之后还有词
+    LEPT_PARSE_ROOT_NOT_SINGULAR,         //空白之后还有词
+    LEPT_PARSE_NUMBER_TOO_BIG
 }lept_error_type;    //enum return types
 
 int lept_parse(lept_value * v,const char* json);
