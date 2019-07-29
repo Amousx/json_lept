@@ -81,7 +81,7 @@ static int lept_parse_number(lept_context* c,lept_value*v){
     if(c->json == end)
         return LEPT_PARSE_INVALID_VALUE;
     c->json = end;
-    v->type = LEPT_NUMEBR;
+    v->type = LEPT_NUMBER;
     return LEPT_PARSE_OK;
 }
 
@@ -116,6 +116,6 @@ lept_type lept_get_type(const lept_value* v) {
 }
 
 double lept_get_number(const lept_value* v){
-    assert(v!=NULL && v->type == LEPT_NUMEBR );
+    assert(v!=NULL && v->type == LEPT_NUMBER );
     return v->n;
 }
